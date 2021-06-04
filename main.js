@@ -45,9 +45,19 @@
         for(let _ = 0; _ < counts.value >> 0; _++) {
             const name = generate(length.value >> 0, (vowel_prob.value >> 0) / 100).toLowerCase();
             const div = document.createElement('div');
+            div.classList.add('hover');
             div.innerText = name;
             clone.appendChild(div);
             stack.push(name);
+
+            div.addEventListener('click', () => {
+                const name = div.innerText;
+                if (window.speechSynthesis) {
+                    const ssu = new SpeechSynthesisUtterance(name.toLowerCase());
+                    ssu.lang = "en";
+                    speechSynthesis.speak(ssu);
+                }
+            })
         }
 
         console.clear();

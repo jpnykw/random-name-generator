@@ -29,3 +29,7 @@ div {
 #result > div:nth-of-type(even) {
     background: #e8e8e8;
 }
+
+.hover {
+    cursor: pointer;
+}
