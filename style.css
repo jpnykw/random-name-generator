@@ -2,10 +2,55 @@ body {
     font-family: monospace;
     font-size: 16px;
     text-transform: uppercase;
+
+    /* position: absolute; */
+    display: inline-block;
 }
 
 div {
     margin: 5px;
+}
+
+p {
+    /* margin-bottom: 2px; */
+    margin: 0 0 10px 0;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background: #be7ceb;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 6px;
+    border: none;
+    background: #eee;
+    padding: 6px;
+    color: #222;
+    font-family: monospace;
+}
+
+#pannel {
+    width: 250px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+#pannel > div > form {
+    margin: 10px;
+    padding: 3px;
+}
+
+#pannel > div > form:nth-of-type(odd) {
+    background: #fafafa;
 }
 
 #result {
@@ -13,6 +58,12 @@ div {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 420px;
+    transform: translateX(-50%);
 }
 
 #result > div {
@@ -20,14 +71,14 @@ div {
     padding: 8px 16px;
     border-radius: 6px;
     font-size: 20px;
-    color: #222;
-    background: #f8f8f8;
+    color: #fff;
+    background: #aecbd1;
     display: inline-block;
     text-align: center;
 }
 
 #result > div:nth-of-type(even) {
-    background: #e8e8e8;
+    background: #7dbac7;
 }
 
 .hover {
