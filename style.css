@@ -1,0 +1,25 @@
+body {
+    font-family: monospace;
+}
+
+#result {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#result > div {
+    width: 10%;
+    margin: 20px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #222;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+#result > div:nth-of-type(even) {
+    background: #e8e8e8;
+}
