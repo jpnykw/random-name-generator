@@ -5,8 +5,10 @@
     const vowel_prob = document.querySelectorAll('input')[2];
     const upper_case = document.querySelectorAll('input')[3];
     const lwoer_case = document.querySelectorAll('input')[4];
+    const text_speech = document.querySelectorAll('input')[5];
+    let text_speech_before_status = true;
     // 動的に変更
-    const vowel_prob_view = document.querySelectorAll('span')[0];
+    const vowel_prob_view = document.querySelectorAll('p')[0];
     // 生成ボタン
     const button = document.querySelectorAll('button')[0];
 
@@ -32,6 +34,17 @@
 
     lwoer_case.addEventListener('click', () => switch_mode('lower'));
 
+    text_speech.addEventListener('click', () => {
+        if (text_speech.checked) {
+            if (text_speech_before_status) {
+                text_speech_before_status = false;
+                text_speech.checked = false;
+            } else {
+                text_speech_before_status = true;
+            }
+        }
+    });
+
     vowel_prob.addEventListener('change', () => {
         vowel_prob_view.innerText = vowel_prob.value;
     });
@@ -52,7 +65,7 @@
 
             div.addEventListener('click', () => {
                 const name = div.innerText;
-                if (window.speechSynthesis) {
+                if (window.speechSynthesis && text_speech.checked) {
                     const ssu = new SpeechSynthesisUtterance(name.toLowerCase());
                     ssu.lang = "en";
                     speechSynthesis.speak(ssu);

@@ -8,16 +8,22 @@
     <title>random name generatojr</title>
 </head>
 <body>
-    <div>名前の長さ <input value="5" placeholder="名前の長さ"></div>
-    <div>生成する数 <input value="10" placeholder="生成する数"></div>
-    <div>母音の確率% <input type="range" min="0" max="100" value="100"> <span>100</span></div>
-    <div>
-        <form>
-            <div><input checked type="radio"> 大文字</div>
-            <div><input type="radio"> 小文字</div>
-        </form>
+    <div id="pannel">
+        <div>名前の長さ <input value="5" placeholder="名前の長さ"></div>
+        <div>生成する数 <input value="10" placeholder="生成する数"></div>
+        <div>母音の生成確率% <input type="range" min="0" max="100" value="100"> <p>100</p></div>
+        <div>
+            <form>
+                <div><input checked type="radio"> 大文字</div>
+                <div><input type="radio"> 小文字</div>
+            </form>
+            <form>
+                <div><input checked type="radio"> 読み上げ</div>
+            </form>
+        </div>
+        <div><button>生成</button></div>
     </div>
-    <div><button>生成</button></div>
+
     <div id="result"></div>
 
     <script src="./generator.js"></script>
