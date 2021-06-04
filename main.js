@@ -1,10 +1,14 @@
 (() => {
+    // パラメーター群
     const length = document.querySelectorAll('input')[0];
     const counts = document.querySelectorAll('input')[1];
     const vowel_prob = document.querySelectorAll('input')[2];
     const upper_case = document.querySelectorAll('input')[3];
     const lwoer_case = document.querySelectorAll('input')[4];
-    const button = document.querySelector('button');
+    // 動的に変更
+    const vowel_prob_view = document.querySelectorAll('span')[0];
+    // 生成ボタン
+    const button = document.querySelectorAll('button')[0];
 
     const switch_mode = (mode) => {
         switch (mode) {
@@ -27,6 +31,10 @@
     upper_case.addEventListener('click', () => switch_mode('upper'));
 
     lwoer_case.addEventListener('click', () => switch_mode('lower'));
+
+    vowel_prob.addEventListener('change', () => {
+        vowel_prob_view.innerText = vowel_prob.value;
+    });
 
     button.addEventListener('click', () => {
         const result = document.querySelector('#result');
